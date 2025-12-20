@@ -248,7 +248,7 @@ input:-webkit-autofill:active {
 
 @media (max-width: 992px) {
   .contact-wrapper {
-    padding: 120px 3% 30px;
+    padding: 100px 3% 30px;
   }
   .contact-header h1 {
     font-size: 45px;
