@@ -1,0 +1,93 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 8%;
+  background: teal;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 25px;
+  color: #ffffff;
+  font-weight: 700;
+  font-family: sans-serif;
+}
+
+.navbar a {
+  font-size: 14px;
+  color: #ffffff;
+  font-weight: 500;
+  margin-left: 35px;
+  transition: 0.3s;
+  letter-spacing: 1px;
+  font-family: "MyCustomFontName", sans-serif;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.navbar a:hover,
+.navbar a.active {
+  color: #00ff6a;
+}
+
+#menu-icon {
+  font-size: 25px;
+  color: #ffffff !important;
+  cursor: pointer;
+  display: none;
+}
+
+/* Media Quries Start From Here */
+@media (max-width: 1200px) {
+  .header {
+    padding: 20px 5%;
+  }
+}
+
+@media (max-width: 992px) {
+  .header {
+    padding: 20px 3%;
+  }
+}
+
+@media (max-width: 768px) {
+  #menu-icon {
+    display: block !important;
+  }
+
+  #menu-icon svg {
+    display: block;
+  }
+
+  .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 0 5%;
+    background: teal;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out, opacity 0.4s ease;
+  }
+
+  .navbar.active {
+    max-height: 300px;
+    opacity: 1;
+    padding: 1rem 5%;
+  }
+
+  .navbar a {
+    display: block;
+    margin: 1.5rem 0;
+    color: #ffffff;
+  }
+}

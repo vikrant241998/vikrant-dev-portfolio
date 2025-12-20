@@ -1,0 +1,267 @@
+.contact-wrapper {
+  background-color: teal;
+  color: white;
+  font-family: "Inter", sans-serif;
+  min-height: 100vh;
+  padding: 100px 8% 0;
+}
+
+.contact-header h1 {
+  font-size: 50px;
+  margin-bottom: 10px;
+  line-height: 1.1;
+  font-family: sans-serif;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.contact-header p {
+  color: #ffffff;
+  max-width: 650px;
+  opacity: 0.8;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+/* Layout logic without media queries */
+.contact-main {
+  display: flex;
+  gap: 60px;
+}
+
+/* Info Section */
+.contact-info-list {
+  flex: 1 1 300px; /* Basis 300px means it will stack if space < 300px */
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding-top: 10px;
+}
+
+.info-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.icon-box {
+  width: 55px;
+  height: 55px;
+  background-color: #272731;
+  border: 1px solid #3f3f46;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: var(--accent-color);
+}
+
+.info-text label {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+.info-text p {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+/* Form Section */
+.contact-form-container {
+  flex: 2 1 500px; /* Takes more space than info section */
+}
+
+.contact-form-container h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Grid for Inputs - No Media Queries needed here */
+.input-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
+  gap: 20px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+}
+
+.input-group label span {
+  color: var(--accent-color);
+}
+
+.input-group input,
+.input-group textarea {
+  width: 100%;
+  border-radius: 5px;
+  padding: 15px;
+  color: white;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid white;
+  background: #006666; /* Aapka theme background */
+
+  /* Sirf bottom ke liye box-shadow */
+  box-shadow: 0px 8px 10px -6px rgba(0, 0, 0, 0.5);
+
+  transition: box-shadow 0.3s ease;
+}
+
+/* Hover ya Focus par shadow thodi badhane ke liye */
+.input-group input:focus,
+.input-group textarea:focus {
+  box-shadow: 0px 12px 15px -8px rgba(0, 0, 0, 0.6);
+  outline: none;
+}
+
+.input-group textarea {
+  height: 180px;
+  resize: none;
+}
+
+/* Error Styling */
+.error-msg {
+  color: black;
+  font-size: 14px;
+  margin-top: 5px;
+  display: block;
+  padding: 5px 10px;
+  font-weight: 600;
+}
+
+/* Alert Styling (Top Right Toast) */
+.form-alert {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 15px 25px;
+  background-color: #4caf50; /* Green for success */
+  color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  animation: slideIn 0.5s ease-out;
+}
+
+.close-alert {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* .send-btn {
+  background-color: #ffffff;
+  margin-bottom: 2rem;
+  width: 200px;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #000000;
+  font-weight: 600;
+  cursor: pointer;
+} */
+
+.send-btn {
+  background-color: #ffffff;
+  margin-bottom: 2rem;
+  width: 200px;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #000000;
+  font-weight: 600;
+  cursor: pointer;
+
+  /* Required for sliding effect */
+  position: relative;
+  overflow: hidden;
+  transition: color 0.4s ease;
+  z-index: 1;
+}
+
+/* Sliding layer */
+.send-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%; /* Shuruat mein bahar rahega */
+  width: 100%;
+  height: 100%;
+  background-color: #000000; /* Hover color */
+  transition: all 0.4s ease;
+  z-index: -1;
+}
+
+/* Hover State */
+.send-btn:hover {
+  color: #ffffff; /* Text color change */
+}
+
+.send-btn:hover::before {
+  left: 0; /* Hover par andar slide hoga */
+}
+/* Is code ko apni CSS file mein add karein */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  /* Background color ko transparent dikhane ke liye ye trick use karein */
+  -webkit-box-shadow: 0 0 0 1000px #ebf1ff inset !important; /* #ebf1ff ki jagah apna input color code dalein */
+  -webkit-text-fill-color: #333 !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* @Media Quries start from here */
+@media (max-width: 1200px) {
+  .contact-wrapper {
+    padding: 100px 5% 0;
+  }
+}
+
+@media (max-width: 992px) {
+  .contact-wrapper {
+    padding: 120px 3% 30px;
+  }
+  .contact-header h1 {
+    font-size: 45px;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-header h1 {
+        font-size: 40px;
+    }
+  .input-row {
+    grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
+  }
+
+  
+}
