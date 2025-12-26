@@ -52,6 +52,101 @@
   height: auto;
 }
 
+/* ======================================= */
+/* Container styling */
+.services-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 20px;
+  width: 100%;
+}
+
+.services-container {
+  display: flex;
+  flex-wrap: wrap; /* Isse media query ki zarurat nahi padti */
+  justify-content: center;
+  gap: 30px;
+  max-width: 1200px;
+  width: 100%;
+}
+
+/* Card Styling */
+.service-card {
+  background: rgba(13, 59, 58, 0.4); /* Dark Teal with transparency */
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(20, 184, 166, 0.2);
+  border-radius: 20px;
+  padding: 40px 30px;
+  flex: 1 1 300px; /* Base size 300px, but can grow/shrink */
+  max-width: 380px;
+  text-align: center;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  border-color: #14b8a6;
+  background: rgba(13, 59, 58, 0.6);
+}
+
+/* Icon & Typography */
+.icon-circle {
+  width: 60px;
+  height: 60px;
+  background: rgba(20, 184, 166, 0.1);
+  border: 2px solid #14b8a6;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+}
+
+.card-title {
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+.feature-list {
+  list-style: none;
+  padding: 0;
+  color: #ccd6f6;
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+.feature-list li::before {
+  content: "•";
+  color: #14b8a6;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+/* Bottom Button */
+.pricing-btn {
+  margin-top: 50px;
+  padding: 15px 40px;
+  background-color: #22c55e;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  letter-spacing: 1px;
+  box-shadow: 0 0 20px rgba(34, 197, 94, 0.3);
+  transition: all 0.3s ease;
+}
+
+.pricing-btn:hover {
+  background-color: #16a34a;
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(34, 197, 94, 0.5);
+}
+/* ======================================= */
 @media (max-width: 1200px) {
   .portfolio-wrapper {
     padding: 100px 5% 0;
