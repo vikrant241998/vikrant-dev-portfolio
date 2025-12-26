@@ -68,12 +68,10 @@
   color: #99f6e4;
 } */
 
-
 /* ============= */
 
-
 .project-page {
-background-color: teal;
+  background-color: teal;
   padding: 78px 0px;
   min-height: 100vh;
   color: #fff;
@@ -83,7 +81,7 @@ background-color: teal;
 /* Hero */
 .project-hero {
   position: relative;
-  /* height: 500px; */
+  /* height: 600px; */
 }
 
 .project-hero img {
@@ -122,9 +120,10 @@ background-color: teal;
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
 }
 
-.project-heading{
-    font-size: 3rem;
-    padding-bottom: 1rem;
+.project-heading {
+  font-size: 3rem;
+  padding-bottom: 1rem;
+  font-weight: 700;
 }
 
 /* Sections */
@@ -214,4 +213,35 @@ background-color: teal;
 
 .live-btn:hover span {
   transform: translateX(4px);
+}
+
+@media (max-width: 1200px) {
+  .project-hero {
+    height: 600px;
+  }
+}
+
+@media (max-width: 992px) {
+  .project-hero {
+    height: 450px;
+  }
+  .project-heading {
+    font-size: 40px;
+  }
+}
+@media (max-width: 768px) {
+  .project-card {
+    padding: 10px 10px 25px;
+  }
+  .live-btn {
+    padding: 10px 24px;
+    font-size: 14px;
+}
+}
+
+@media (max-width: 600px) {
+  .project-heading {
+    font-size: 28px;
+  }
+
 }

@@ -15,7 +15,6 @@
   color: #ffffff;
   font-size: 3rem;
   font-weight: 700;
-  margin-bottom: 10px;
   position: relative;
   display: inline-block;
   cursor: pointer;
@@ -133,6 +132,9 @@
   .port-wrapper {
     grid-template-columns: repeat(3, 1fr);
   }
+   .port-container {
+    padding: 80px 5% 50px;
+  }
 }
 
 @media (max-width: 992px) {
@@ -140,7 +142,7 @@
     grid-template-columns: repeat(2, 1fr);
   }
   .port-container {
-    padding: 80px 5% 50px;
+    padding: 80px 3% 50px;
   }
 }
 
@@ -151,4 +153,7 @@
   .port-title {
     font-size: 2.2rem;
   }
+  .section-header {
+  margin-bottom: 30px;
+}
 }

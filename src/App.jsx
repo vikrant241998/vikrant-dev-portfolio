@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Routes, Route } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Routes, Route, useLocation } from "react-router-dom";
 import "./App.css";
 import Header from "./navbar/Header";
 import Home from "./components/Home";
@@ -9,7 +9,15 @@ import Service from "./components/Service";
 import Portfolio from "./components/Portfolio";
 import ProjectDetails from "./components/ProjectDetails";
 
+
+
 function App() {
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
   return (
     <>
 
