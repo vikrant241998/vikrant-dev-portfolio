@@ -215,6 +215,29 @@
   transform: translateX(4px);
 }
 
+
+.role-list {
+  list-style: disc;           /* ✅ dot rahega */
+  padding-left: 22px;         /* dot ke liye space */
+  margin-top: 12px;
+}
+
+.role-list li {
+  color: #ecfeff;
+  font-size: 16px;
+  margin-bottom: 10px;
+
+  white-space: normal;
+  word-break: break-word;
+}
+
+/* 🔥 Dot ka color + perfect alignment */
+.role-list li::marker {
+  color: #5eead4;             /* teal accent dot */
+  font-size: 1.2em;
+}
+
+
 @media (max-width: 1200px) {
   .project-hero {
     height: 600px;
@@ -243,5 +266,7 @@
   .project-heading {
     font-size: 28px;
   }
-
+  .role-list li {
+    font-size: 15px;
+  }
 }

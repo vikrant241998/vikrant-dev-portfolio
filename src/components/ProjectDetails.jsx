@@ -61,6 +61,7 @@ import "../styles/projectDetails.css";
 import shunyaEkaiBanner from "../assets/shunyaEkaiBanner.png";
 import plusX_Banner from "../assets/plusX_Banner.png";
 import ridez from "../assets/ridez.png";
+import ridezMobile from "../assets/ridezMobile.webp";
 import aerialBorne_Banner from "../assets/aerialBorne_Banner.png";
 import goignisBanner from "../assets/goignisBanner.png";
 
@@ -326,22 +327,38 @@ const ProjectDetails = () => {
         {/* Role */}
         <section className="section">
           <h2>My Role in This Project</h2>
-          {project.role.map((item, index) => (
-            <p key={index}>• {item}</p>
-          ))}
+          <ul className="role-list">
+            {project.role.map((item, index) => (
+              <li key={index}>{item}</li>
+            ))}
+          </ul>
         </section>
 
         {/* What I Contributed */}
         {project.whatIDid && project.whatIDid.length > 0 && (
+          // <section className="section">
+          //   <h2>What I Contributed</h2>
+            
+          //   {project.whatIDid.map((item, index) => (
+          //     <div key={index} >
+          //       <h4 style={{ fontWeight: "bold" }}> {item.heading}</h4>
+          //       <p style={{ paddingLeft: "12px" }}> {item.desc}</p>
+          //     </div>
+          //   ))}
+          // </section>
           <section className="section">
-            <h2>What I Contributed</h2>
-            {project.whatIDid.map((item, index) => (
-              <div key={index}>
-                <h4 style={{ fontWeight: "bold" }}>• {item.heading}</h4>
-                <p style={{ paddingLeft: "12px" }}> {item.desc}</p>
-              </div>
-            ))}
-          </section>
+  <h2>What I Contributed</h2>
+
+  <ul className="role-list">
+    {project.whatIDid.map((item, index) => (
+      <li key={index}>
+        <h4 style={{ fontWeight: "bold" }}>{item.heading}</h4>
+        <p style={{ paddingLeft: "12px" }}>{item.desc}</p>
+      </li>
+    ))}
+  </ul>
+</section>
+
         )}
 
         {/* Tech */}
