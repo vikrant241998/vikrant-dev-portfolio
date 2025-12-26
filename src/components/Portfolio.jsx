@@ -1,5 +1,7 @@
 import React from "react";
 import "../styles/portfolio.css"; // CSS file link
+import { Link } from "react-router-dom";
+
 import shunyaEkai from "../assets/shunyaEkai.png";
 import plusX from "../assets/plusX.png";
 import ridez from "../assets/ridez.png";
@@ -11,7 +13,7 @@ const Portfolio = () => {
     {
       id: 1,
       title: "ShunyaEkai Technologies",
-      desc: "Built a professional tech platform focusing on AI and future-ready solutions with a modern UI.",
+      desc: `ShunyaEkai Technologies is a corporate website developed to represent the company’s brand vision and services in a clean and professional way`,
       img: shunyaEkai,
     },
     {
@@ -26,7 +28,7 @@ const Portfolio = () => {
       desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Exercitationem harum id incidunt..",
       img: ridez,
     },
-    
+
     {
       id: 4,
       title: "Aerial Borne",
@@ -62,13 +64,22 @@ const Portfolio = () => {
       <div className="port-wrapper">
         {projects.map((project) => (
           <div className="port-card" key={project.id}>
-            <div className="port-img">
-              <img src={project.img} alt={project.title} />
-            </div>
+            <Link to={`/project/${project.id}`}>
+              <div className="port-img">
+                <img src={project.img} alt={project.title} />
+              </div>
+            </Link>
             <div className="port-content">
               <h3>{project.title}</h3>
-              <p>{project.desc}</p>
-              <button className="read-more">Read more</button>
+              <p>
+                {project.desc.length > 100
+                  ? project.desc.slice(0, 100) + " . . ."
+                  : project.desc}
+              </p>
+
+              <Link to={`/project/${project.id}`} className="read-more">
+                Read more
+              </Link>
             </div>
           </div>
         ))}
