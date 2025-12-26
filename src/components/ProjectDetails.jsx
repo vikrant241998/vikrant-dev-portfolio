@@ -66,18 +66,18 @@ import goignisBanner from "../assets/goignisBanner.png";
 
 const projectsData = {
   1: {
-    title: "ShunyaEkai Technologies",
+    title: `ShunyaEkai Technologies`,
     banner: shunyaEkaiBanner,
     overview: `ShunyaEkai Technologies is a corporate website developed to represent the company’s brand, vision, and services in a clean and professional way.
                I designed and implemented the complete UI with a strong focus on responsiveness, layout consistency, and user-friendly navigation.`,
     role: [
-      "Designed the complete UI layout from scratch",
-      "Developed frontend using HTML, CSS, and JavaScript",
-      "Implemented responsive design for all devices",
-      "Used Bootstrap grid and components",
-      "Wrote custom CSS for better visual consistency",
-      "Ensured clean structure and spacing",
-      "Tested UI across browsers",
+      `Designed the complete UI layout from scratch`,
+      `Developed frontend using HTML, CSS, and JavaScript`,
+      `Implemented responsive design for all devices`,
+      `Used Bootstrap grid and components`,
+      `Wrote custom CSS for better visual consistency`,
+      `Ensured clean structure and spacing`,
+      `Tested UI across browsers`,
     ],
 
     whatIDid: [
@@ -113,10 +113,10 @@ const projectsData = {
     overview: `PlusX Electric is a corporate website created for an electric mobility brand to showcase its products, vision, and innovation in a modern and professional manner.
                 The objective of this project was to design and develop a clean, responsive, and user-friendly UI that reflects the brand’s focus on sustainability and future-ready electric solutions.`,
     role: [
-      "Created structured sections such as banners, content blocks, and footers to clearly present brand information",
-      "Ensured the website adapts seamlessly across different screen sizes using Bootstrap and custom media queries.",
-      "Enhanced the default Bootstrap components with custom CSS to maintain a unique and professional brand identity.",
-      "Focused on readability, consistent colors, and intuitive layout flow to improve user engagement.",
+      `Created structured sections such as banners, content blocks, and footers to clearly present brand information`,
+      `Ensured the website adapts seamlessly across different screen sizes using Bootstrap and custom media queries.`,
+      `Enhanced the default Bootstrap components with custom CSS to maintain a unique and professional brand identity.`,
+      `Focused on readability, consistent colors, and intuitive layout flow to improve user engagement.`,
     ],
 
     whatIDid: [
@@ -159,13 +159,13 @@ const projectsData = {
     overview: `Ridez is a technology-driven mobility platform designed to present transportation solutions in a clean, modern, and accessible way.
             The primary focus of this project was to create a visually appealing and responsive user interface that clearly communicates the brand’s services while ensuring smooth navigation and usability across all devices.`,
     role: [
-      "Planned and structured the complete frontend layout for the website",
-      "Converted design ideas into fully functional web pages using HTML and CSS",
-      "Implemented responsive behavior to ensure consistency across different screen sizes",
-      "Integrated JavaScript for basic UI interactions and page behavior",
-      "Customized Bootstrap components to align with the brand’s visual identity",
-      "Improved UI flow by organizing content sections logically",
-      "Ensured consistent styling, spacing, and typography throughout the site",
+      `Planned and structured the complete frontend layout for the website`,
+      `Converted design ideas into fully functional web pages using HTML and CSS`,
+      `Implemented responsive behavior to ensure consistency across different screen sizes`,
+      `Integrated JavaScript for basic UI interactions and page behavior`,
+      `Customized Bootstrap components to align with the brand’s visual identity`,
+      `Improved UI flow by organizing content sections logically`,
+      `Ensured consistent styling, spacing, and typography throughout the site`,
     ],
 
     whatIDid: [
@@ -200,13 +200,13 @@ const projectsData = {
               and interactive manner. The main objective was to develop a highly responsive and visually engaging user interface that allows users 
               to explore aviation services efficiently while maintaining a sleek, brand-aligned aesthetic.`,
     role: [
-      "Planned and implemented the complete frontend UI using HTML, CSS, Next.js, TypeScript, Bootstrap, and Tailwind CSS.",
-      "Converted complex design mockups into fully functional and responsive web pages.",
-      "Structured content sections for services, solutions, and case studies for intuitive readability.",
-      "Implemented cross-device responsiveness to ensure seamless experience on desktop, tablet, and mobile screens.",
-      "Integrated interactive UI elements and animations using CSS and Next.js features.",
-      "Optimized layout consistency and visual hierarchy throughout the website.",
-      "Conducted cross-browser testing to maintain compatibility and performance.",
+      `Planned and implemented the complete frontend UI using HTML, CSS, Next.js, TypeScript, Bootstrap, and Tailwind CSS.`,
+      `Converted complex design mockups into fully functional and responsive web pages.`,
+      `Structured content sections for services, solutions, and case studies for intuitive readability.`,
+      `Implemented cross-device responsiveness to ensure seamless experience on desktop, tablet, and mobile screens.`,
+      `Integrated interactive UI elements and animations using CSS and Next.js features.`,
+      `Optimized layout consistency and visual hierarchy throughout the website.`,
+      `Conducted cross-browser testing to maintain compatibility and performance.`,
     ],
 
     whatIDid: [
@@ -258,12 +258,12 @@ const projectsData = {
               and visually engaging user interface that clearly communicates the company’s offerings while maintaining performance 
               and responsiveness across all devices.`,
     role: [
-      "Designed and developed the complete frontend UI of the website",
-      "Created structured and well-organized layouts for all pages and sections",
-      "Ensured visual consistency across the site using proper spacing, typography, and color balance",
-      "Implemented fully responsive designs for desktop, tablet, and mobile devices",
-      "Focused on usability and smooth user experience throughout the website",
-      "Maintained a clean and professional UI aligned with the brand identity",
+      `Designed and developed the complete frontend UI of the website`,
+      `Created structured and well-organized layouts for all pages and sections`,
+      `Ensured visual consistency across the site using proper spacing, typography, and color balance`,
+      `Implemented fully responsive designs for desktop, tablet, and mobile devices`,
+      `Focused on usability and smooth user experience throughout the website`,
+      `Maintained a clean and professional UI aligned with the brand identity`,
     ],
 
     whatIDid: [
