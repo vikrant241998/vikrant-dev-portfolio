@@ -215,10 +215,9 @@
   transform: translateX(4px);
 }
 
-
 .role-list {
-  list-style: disc;           /* ✅ dot rahega */
-  padding-left: 22px;         /* dot ke liye space */
+  list-style: disc; /* ✅ dot rahega */
+  padding-left: 22px; /* dot ke liye space */
   margin-top: 12px;
 }
 
@@ -233,20 +232,19 @@
 
 /* 🔥 Dot ka color + perfect alignment */
 .role-list li::marker {
-  color: #5eead4;             /* teal accent dot */
+  color: #5eead4; /* teal accent dot */
   font-size: 1.2em;
 }
 
-
 @media (max-width: 1200px) {
-  .project-hero {
+  /* .project-hero {
     height: 600px;
-  }
+  } */
 }
 
 @media (max-width: 992px) {
   .project-hero {
-    height: 450px;
+    height: 380px;
   }
   .project-heading {
     font-size: 40px;
@@ -259,7 +257,10 @@
   .live-btn {
     padding: 10px 24px;
     font-size: 14px;
-}
+  }
+  .project-hero {
+    height: 330px;
+  }
 }
 
 @media (max-width: 600px) {
@@ -268,5 +269,8 @@
   }
   .role-list li {
     font-size: 15px;
+  }
+   .project-hero {
+    /* height: 300px; */
   }
 }
