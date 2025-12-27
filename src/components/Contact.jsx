@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import emailjs from "@emailjs/browser";
 import "../styles/contact.css";
 
 const Contact = () => {
@@ -13,30 +14,36 @@ const Contact = () => {
   const [errors, setErrors] = useState({});
   const [alert, setAlert] = useState({ show: false, message: "", type: "" });
 
-  const validate = () => {
-    let tempErrors = {};
-    if (!formData.name.trim()) tempErrors.name = "Name is required";
+ 
+const validate = () => {
+  let tempErrors = {};
+  
+  // Name Validation
+  if (!formData.name.trim()) tempErrors.name = "Name is required";
 
-    const emailRegex = /\S+@\S+\.\S+/;
-    if (!formData.email) {
-      tempErrors.email = "Email is required";
-    } else if (!emailRegex.test(formData.email)) {
-      tempErrors.email = "Invalid email format";
-    }
+  // Strict Email Validation (Allows only specific extensions)
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.(com|in|org|net|edu|gov)$/;
+  if (!formData.email) {
+    tempErrors.email = "Email is required";
+  } else if (!emailRegex.test(formData.email.toLowerCase())) {
+    tempErrors.email = "Invalid format! Use .com, .in, .net etc.";
+  }
 
-    if (!formData.phone) {
-      tempErrors.phone = "Phone is required";
-    } else if (formData.phone.length < 10) {
-      tempErrors.phone = "Enter 10-digit number";
-    }
+  // Strict Indian Phone Validation (Starts with 6-9, 10 digits)
+  const phoneRegex = /^[6-9]\d{9}$/;
+  if (!formData.phone) {
+    tempErrors.phone = "Phone is required";
+  } else if (!phoneRegex.test(formData.phone)) {
+    tempErrors.phone = "Enter a valid 10-digit number";
+  }
 
-    if (!formData.subject.trim()) tempErrors.subject = "Subject is required";
-    if (!formData.message.trim()) tempErrors.message = "Message is required";
+  if (!formData.subject.trim()) tempErrors.subject = "Subject is required";
+  if (!formData.message.trim()) tempErrors.message = "Message is required";
 
-    setErrors(tempErrors);
-    return Object.keys(tempErrors).length === 0;
-  };
-
+  setErrors(tempErrors);
+  // Agar errors object empty hai, tabhi 'true' return hoga
+  return Object.keys(tempErrors).length === 0;
+};
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
     if (errors[e.target.name]) {
@@ -47,22 +54,49 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validate()) {
-      // Alert Show karein
-      setAlert({
-        show: true,
-        message: "Message sent successfully! We will contact you soon.",
-        type: "success",
-      });
+      const serviceID = "service_t6ursgv";
+      const templateID = "template_9erl9mm";
+      const publicKey = "UF2XFWRWwcZRYtEVk"; // <--- Double check this!
 
-      console.log("Form Data:", formData);
+      const templateParams = {
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        subject: formData.subject,
+        message: formData.message,
+      };
 
-      // Form reset karein
-      setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
-
-      // 4 seconds baad alert hide karein
-      setTimeout(() => {
-        setAlert({ show: false, message: "", type: "" });
-      }, 4000);
+      emailjs
+        .send(serviceID, templateID, templateParams, publicKey)
+        .then((response) => {
+          setAlert({
+            show: true,
+            message: "✔ Success! Your message has been sent. I will get back to you shortly.",
+            type: "success",
+          });
+          setFormData({
+            name: "",
+            email: "",
+            phone: "",
+            subject: "",
+            message: "",
+          });
+        })
+        .catch((err) => {
+          // Isse aapko Console mein exact problem dikh jayegi
+          console.error("EmailJS Error Detail:", err);
+          setAlert({
+            show: true,
+            message: `Error: ${err.text || "Connection Issue"}`,
+            type: "error",
+          });
+        })
+        .finally(() => {
+          setTimeout(
+            () => setAlert({ show: false, message: "", type: "" }),
+            4000
+          );
+        });
     }
   };
 
@@ -187,6 +221,8 @@ const Contact = () => {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
+                  // Isse user ke input chodte hi validation check ho jayegi
+                  onBlur={validate}
                   placeholder="Enter your Email"
                   className={errors.email ? "input-error" : ""}
                 />
