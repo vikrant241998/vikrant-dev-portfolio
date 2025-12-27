@@ -120,7 +120,7 @@ const About = () => {
                   Download CV
                 </a>
                 {/* <button className="btn-cv">Download CV</button> */}
-                 <Link to="/contact">
+                <Link to="/contact">
                   <button className="btn-contact">Contact Me</button>
                 </Link>
               </div>

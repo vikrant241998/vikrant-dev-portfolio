@@ -102,7 +102,6 @@ function Home() {
               <i className="fab fa-whatsapp"></i>
             </a>
             <a href="mailto:vikrantmulankar389@gmail.com?subject=Contact%20from%20Website&body=Hello%20Vikrant,%0AI%20want%20to%20connect%20with%20you.">
-           
               <i className="fa-solid fa-envelope"></i>
             </a>
             <a href="https://github.com/vikrant241998">

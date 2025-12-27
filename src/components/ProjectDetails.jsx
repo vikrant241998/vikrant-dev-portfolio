@@ -338,7 +338,7 @@ const ProjectDetails = () => {
         {project.whatIDid && project.whatIDid.length > 0 && (
           // <section className="section">
           //   <h2>What I Contributed</h2>
-            
+
           //   {project.whatIDid.map((item, index) => (
           //     <div key={index} >
           //       <h4 style={{ fontWeight: "bold" }}> {item.heading}</h4>
@@ -347,18 +347,17 @@ const ProjectDetails = () => {
           //   ))}
           // </section>
           <section className="section">
-  <h2>What I Contributed</h2>
+            <h2>What I Contributed</h2>
 
-  <ul className="role-list">
-    {project.whatIDid.map((item, index) => (
-      <li key={index}>
-        <h4 style={{ fontWeight: "bold" }}>{item.heading}</h4>
-        <p style={{ paddingLeft: "12px" }}>{item.desc}</p>
-      </li>
-    ))}
-  </ul>
-</section>
-
+            <ul className="role-list">
+              {project.whatIDid.map((item, index) => (
+                <li key={index}>
+                  <h4 style={{ fontWeight: "bold" }}>{item.heading}</h4>
+                  <p style={{ paddingLeft: "12px" }}>{item.desc}</p>
+                </li>
+              ))}
+            </ul>
+          </section>
         )}
 
         {/* Tech */}

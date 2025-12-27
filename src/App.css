@@ -1,39 +1,26 @@
 @import "tailwindcss";
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   color: #ffffff;
-  /* -webkit-user-select: none; 
-    -moz-user-select: none;     
-    -ms-user-select: none;      
-    user-select: none; */
 }
 
 @font-face {
-  font-family: 'MyCustomFontName'; /* ✨ Yahan apne font ka naam do ✨ */
-  
-  /* Path hamesha public/assets se nahi, balki CSS file ke relative se hota hai */
-  src: url('./assets/fonts/Poppins-Medium.ttf') format('woff2'); 
+  font-family: "MyCustomFontName";
+  src: url("./assets/fonts/Poppins-Medium.ttf") format("woff2");
   font-style: normal;
-  font-display: swap; /* Font load hone se pehle fallback font dikhega (performance ke liye best) */
+  font-display: swap;
 }
 
-
-/* index.css ya App.css */
-
-/* Sabhi browsers ke liye scrollbar hide karne ka rule */
-html, body {
-  /* Firefox ke liye */
+html,
+body {
   scrollbar-width: none;
-  
-  /* Internet Explorer aur Edge ke liye */
   -ms-overflow-style: none;
 }
 
-/* Chrome, Safari aur Opera (Webkit) ke liye */
-html::-webkit-scrollbar, 
+html::-webkit-scrollbar,
 body::-webkit-scrollbar {
   display: none;
 }
-

@@ -49,6 +49,7 @@
     background-position: 200% center;
   }
 }
+
 .description {
   font-size: 16px;
   color: #ffffff;
@@ -100,21 +101,10 @@
   border-color: #ffffff;
 }
 
-/* .image-content {
-  max-width: 450px;
-  height: 450px;
-  position: relative;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 3px solid aliceblue;
-  animation: floating 4s ease-in-out infinite;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-} */
-
 .image-content {
-  width: 30vw; /* viewport width ke hisaab se size */
-  max-width: 450px; /* optional, max size limit */
-  aspect-ratio: 1 / 1; /* height width ke equal rahe */
+  width: 30vw;  
+  max-width: 450px;  
+  aspect-ratio: 1 / 1;  
   position: relative;
   border-radius: 50%;
   overflow: hidden;
@@ -140,6 +130,7 @@
 .image-content:hover img {
   transform: scale(1.03);
 }
+
 @keyframes floating {
   0% {
     transform: translateY(0);
@@ -178,7 +169,6 @@
   }
 }
 
-/* Mobile Screens (Max-width: 768px) */
 @media (max-width: 768px) {
   .hero-content {
     flex-direction: column-reverse;
